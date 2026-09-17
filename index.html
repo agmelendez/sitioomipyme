@@ -166,38 +166,39 @@
         .header-content {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 0.75rem 2rem;
+            padding: 0.65rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .logo-link {
             display: inline-flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 0.9rem;
             text-decoration: none;
         }
 
         .logo-img {
-            height: 48px;
+            height: 44px;
             width: auto;
             object-fit: contain;
             transition: transform 0.25s ease;
         }
 
         .logo-uned {
-            height: 44px;
+            height: 40px;
         }
 
         .logo-omipyme {
-            height: 48px;
+            height: 44px;
         }
 
         .logo-link:hover .logo-img {
@@ -206,7 +207,7 @@
 
         .logo-separator {
             width: 1.5px;
-            height: 38px;
+            height: 32px;
             background: var(--color-neutral-gray);
             opacity: 0.7;
         }
@@ -214,20 +215,22 @@
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.2rem;
+            flex-wrap: nowrap;
         }
 
         .header-nav a {
             color: var(--color-gray-800);
             text-decoration: none;
-            padding: 0.5rem 0.85rem;
+            padding: 0.42rem 0.65rem;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             font-family: var(--font-heading);
             font-weight: 600;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
+            white-space: nowrap;
         }
 
         .header-nav a:hover {
@@ -247,11 +250,12 @@
             color: var(--color-primary-dark) !important;
             font-family: var(--font-heading) !important;
             font-weight: 700 !important;
-            padding: 0.45rem 1.15rem !important;
+            padding: 0.4rem 0.95rem !important;
             border-radius: 50px !important;
             box-shadow: 0 2px 8px rgba(251, 185, 44, 0.35);
-            margin-left: 0.5rem;
+            margin-left: 0.35rem;
             transition: all 0.25s ease !important;
+            white-space: nowrap !important;
         }
 
         .nav-cta-pill:hover {
@@ -1707,17 +1711,26 @@
             background: var(--color-primary-soft);
         }
 
+        @media (max-width: 1140px) {
+            .header-nav {
+                gap: 0.15rem;
+            }
+            .header-nav a {
+                padding: 0.38rem 0.48rem;
+                font-size: 0.82rem;
+            }
+            .nav-cta-pill {
+                padding: 0.38rem 0.75rem !important;
+                font-size: 0.82rem !important;
+                margin-left: 0.2rem !important;
+            }
+        }
+
         @media (max-width: 1024px) {
             .ecosistema-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .header-nav a {
-                padding: 0.45rem 0.65rem;
-                font-size: 0.85rem;
-            }
-        }
 
-        @media (max-width: 992px) {
             .mobile-menu-btn {
                 display: flex;
                 align-items: center;
@@ -1751,6 +1764,8 @@
                 font-size: 0.95rem;
                 width: 100%;
                 justify-content: center;
+                white-space: normal;
+            }
             }
 
             .header-nav a:hover,
@@ -2674,7 +2689,7 @@
                         </div>
                     </div>
 
-                    <div class="informe-item" onclick="selectInforme(this, 'Informes/Informe2_La%20importancia%20del%20sector%20municipal%20en%20el%20ecosistema%20de%20negocios%20de%20las%20mipyme%20y%20su%20relacio%CC%81n%20con%20la%20competitividad.pdf', 'La importancia del sector municipal en el ecosistema de negocios de las MiPYME')">
+                    <div class="informe-item" onclick="selectInforme(this, 'Informes/Informe2_La%20importancia%20del%20sector%20municipal%20en%20el%20ecosistema%20de%20negocios%20de%20las%20mipyme%20y%20su%20relacion%20con%20la%20competitividad.pdf', 'La importancia del sector municipal en el ecosistema de negocios de las MiPYME')">
                         <div class="informe-item-icon">02</div>
                         <div class="informe-item-info">
                             <div class="informe-item-title">La importancia del sector municipal en el ecosistema de negocios de las MiPYME</div>
@@ -2706,7 +2721,7 @@
                         </div>
                     </div>
 
-                    <div class="informe-item" onclick="selectInforme(this, 'Informes/Informe6_Impacto_econo%CC%81mico%20por%20Covid19.pdf', 'Impacto económico por COVID-19')">
+                    <div class="informe-item" onclick="selectInforme(this, 'Informes/Informe6_Impacto_economico%20por%20Covid19.pdf', 'Impacto económico por COVID-19')">
                         <div class="informe-item-icon">06</div>
                         <div class="informe-item-info">
                             <div class="informe-item-title">Impacto económico por COVID-19</div>
@@ -2746,7 +2761,7 @@
                         </div>
                     </div>
 
-                    <div class="informe-item" onclick="selectInforme(this, 'Informes/Informe11_DIFERENCIAS%20POR%20GE%CC%81NERO%20EN%20EL%20EMPRENDIMIENTO%20EMPRESARIAL%20COSTARRICENSE.pdf', 'Diferencias por género en el emprendimiento empresarial costarricense')">
+                    <div class="informe-item" onclick="selectInforme(this, 'Informes/Informe11_DIFERENCIAS%20POR%20GENERO%20EN%20EL%20EMPRENDIMIENTO%20EMPRESARIAL%20COSTARRICENSE.pdf', 'Diferencias por género en el emprendimiento empresarial costarricense')">
                         <div class="informe-item-icon">11</div>
                         <div class="informe-item-info">
                             <div class="informe-item-title">Diferencias por género en el emprendimiento empresarial costarricense</div>
@@ -2818,7 +2833,7 @@
                             </a>
                         </div>
                     </div>
-                    <iframe id="pdf-viewer" class="viewer-frame" src="Informes/Tendencias%20REVEC-BCCR-UJ%20OMIPYMEs%202026.pdf" title="Vista previa del informe"></iframe>
+                    <iframe id="pdf-viewer" class="viewer-frame" src="Informes/Tendencias%20REVEC-BCCR-UJ%20OMIPYMEs%202026.pdf" title="Vista previa del informe" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -2848,7 +2863,7 @@
                         📊 Reportes Especiales ICC <span>(7 provincias)</span>
                     </div>
 
-                    <div class="informe-item active" onclick="selectReporteEspecial(this, 'confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%CC%81%20final.pdf', 'Informe Especial ICC - San José')">
+                    <div class="informe-item active" onclick="selectReporteEspecial(this, 'confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%20final.pdf', 'Informe Especial ICC - San José')">
                         <div class="informe-item-icon">SJ</div>
                         <div class="informe-item-info">
                             <div class="informe-item-title">Informe Especial ICC - San José</div>
@@ -2896,7 +2911,7 @@
                         </div>
                     </div>
 
-                    <div class="informe-item" onclick="selectReporteEspecial(this, 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Limo%CC%81n%20final.pdf', 'Informe Especial ICC - Limón')">
+                    <div class="informe-item" onclick="selectReporteEspecial(this, 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Limon%20final.pdf', 'Informe Especial ICC - Limón')">
                         <div class="informe-item-icon">LI</div>
                         <div class="informe-item-info">
                             <div class="informe-item-title">Informe Especial ICC - Limón</div>
@@ -2910,17 +2925,17 @@
                     <div class="viewer-toolbar">
                         <span class="viewer-title" id="viewer-title-especial">Informe Especial ICC - San José</span>
                         <div class="viewer-actions">
-                            <a id="btn-download-pdf-especial" href="confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%CC%81%20final.pdf" download class="btn-toolbar btn-toolbar-primary">
+                            <a id="btn-download-pdf-especial" href="confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%20final.pdf" download class="btn-toolbar btn-toolbar-primary">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                 Descargar
                             </a>
-                            <a id="btn-open-pdf-especial" href="confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%CC%81%20final.pdf" target="_blank" class="btn-toolbar btn-toolbar-outline">
+                            <a id="btn-open-pdf-especial" href="confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%20final.pdf" target="_blank" class="btn-toolbar btn-toolbar-outline">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 Abrir
                             </a>
                         </div>
                     </div>
-                    <iframe id="pdf-viewer-especial" class="viewer-frame" src="confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%CC%81%20final.pdf" title="Vista previa del reporte especial"></iframe>
+                    <iframe id="pdf-viewer-especial" class="viewer-frame" src="confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%20final.pdf" title="Vista previa del reporte especial" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -3363,13 +3378,13 @@
             }
 
             const provinceMap = {
-                'SJ': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%CC%81%20final.pdf', title: 'Informe Especial ICC - San José' },
+                'SJ': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20San%20Jose%20final.pdf', title: 'Informe Especial ICC - San José' },
                 'AL': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Alajuela%20final.pdf', title: 'Informe Especial ICC - Alajuela' },
                 'CA': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Cartago%20final.pdf', title: 'Informe Especial ICC - Cartago' },
                 'HE': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Heredia%20final.pdf', title: 'Informe Especial ICC - Heredia' },
                 'GU': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Guanacaste%20final.pdf', title: 'Informe Especial ICC - Guanacaste' },
                 'PU': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Puntarenas%20final.pdf', title: 'Informe Especial ICC - Puntarenas' },
-                'LI': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Limo%CC%81n%20final.pdf', title: 'Informe Especial ICC - Limón' }
+                'LI': { file: 'confianza_consumidor/Informe%20Especial%20ICC%20para%20Limon%20final.pdf', title: 'Informe Especial ICC - Limón' }
             };
 
             const data = provinceMap[code];
