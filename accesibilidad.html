@@ -1,0 +1,3447 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaración de Accesibilidad Web &middot; OMiPYME UNED</title>
+    <meta name="description" content="Declaración de Accesibilidad Web del Observatorio de Micro, Pequeñas y Medianas Empresas (OMiPYME) de la Universidad Estatal a Distancia (UNED). Cumplimiento WCAG 2.1 Nivel AA y Ley 7600 de Costa Rica.">
+    <meta name="author" content="OMiPYME - UNED Costa Rica">
+    <meta name="theme-color" content="#0D3996">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Declaración de Accesibilidad Web &middot; OMiPYME UNED">
+    <meta property="og:description" content="Compromiso institucional de la UNED con la inclusión digital universal, accesibilidad WCAG 2.1 AA y herramientas asistivas para el ecosistema PYME.">
+    <meta property="og:image" content="logos/Logo OMIPYME 2025.png">
+
+    <!-- Tipografía Google Fonts Oficial: Kanit + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* ===== PALETA OFICIAL OMIPYME 2025 (Manual de Marca) ===== */
+            --color-primary: #0D3996;          /* Azul Principal OMiPYME (C:100 M:83 Y:3 K:1) */
+            --color-primary-light: #1D55C4;    /* Azul Dinámico / Hover */
+            --color-primary-dark: #07266E;     /* Azul Noche Profundo / Institucional */
+            --color-primary-soft: #EEF4FC;     /* Superficie Azul Hielo Institucional */
+            --color-primary-rgb: 13, 57, 150;
+            --color-primary-dark-rgb: 7, 38, 110;
+
+            --color-accent: #FBB92C;           /* Amarillo / Dorado Institucional OMiPYME (C:0 M:31 Y:87 K:0) */
+            --color-accent-hover: #E5A31E;     /* Dorado Hover */
+            --color-accent-soft: #FEF8EA;      /* Tono Crema / Arena Cálido Institucional */
+            --color-accent-dark: #4A3300;      /* Texto de alto contraste sobre dorado (WCAG AAA) */
+            --color-accent-rgb: 251, 185, 44;
+
+            --color-neutral-gray: #D5D4D4;     /* Gris Institucional OMiPYME (C:19 M:14 Y:15 K:1) */
+            --color-neutral-border: #E2E5EA;   /* Borde Sutil */
+            --color-white: #FFFFFF;
+
+            /* Compatibilidad Institucional UNED */
+            --color-secondary: #057A55;        /* Verde UNED */
+            --color-uned-blue: #0D3996;
+            --color-uned-gold: #FBB92C;
+
+            /* Pilares de Acción (Cinco Pilares Armonizados) */
+            --color-observatorio: #0D3996;     /* Azul OMiPYME */
+            --color-herramientas: #D97706;     /* Ámbar Cálido */
+            --color-investigacion: #057A55;    /* Verde Institucional UNED */
+            --color-formacion: #6B21A8;        /* Púrpura Sabiduría */
+            --color-ecosistema: #0284C7;       /* Azul Océano / Alianzas */
+
+            /* Escala de Grises y Textos */
+            --color-gray-50: #F8FAFC;
+            --color-gray-100: #F1F5F9;
+            --color-gray-200: #E2E8F0;
+            --color-gray-300: #CBD5E1;
+            --color-gray-600: #475569;
+            --color-gray-700: #334155;
+            --color-gray-800: #1E293B;
+            --color-gray-900: #0F172A;
+
+            /* Tipografía Oficial (Pág. 03 Manual de Marca) */
+            --font-heading: 'Kanit', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-gray-900);
+            line-height: 1.6;
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--color-gray-900);
+        }
+
+        /* Enlaces de salto accesible */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 1000;
+            transition: top 0.2s;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ===== Header Institucional ===== */
+        .header {
+            background: white;
+            color: var(--color-gray-900);
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(13, 57, 150, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--color-neutral-border);
+        }
+
+        .header-top-bar {
+            background: var(--color-primary-dark);
+            padding: 0.45rem 2rem;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(251, 185, 44, 0.3);
+        }
+
+        .header-top-bar-content {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .top-bar-badge {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.72rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-top-bar-links {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .header-top-bar-links a {
+            color: rgba(255, 255, 255, 0.88);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .header-top-bar-links a:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
+        .header-content {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.25rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+        }
+
+        .logo-uned {
+            height: 44px;
+        }
+
+        .logo-omipyme {
+            height: 48px;
+        }
+
+        .logo-link:hover .logo-img {
+            transform: scale(1.02);
+        }
+
+        .logo-separator {
+            width: 1.5px;
+            height: 38px;
+            background: var(--color-neutral-gray);
+            opacity: 0.7;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .header-nav a {
+            color: var(--color-gray-800);
+            text-decoration: none;
+            padding: 0.5rem 0.85rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .header-nav a:hover {
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+        }
+
+        .header-nav a.nav-active {
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* Botón píldora en navbar (Manual Pág 10) */
+        .nav-cta-pill {
+            background: var(--color-accent) !important;
+            color: var(--color-primary-dark) !important;
+            font-family: var(--font-heading) !important;
+            font-weight: 700 !important;
+            padding: 0.45rem 1.15rem !important;
+            border-radius: 50px !important;
+            box-shadow: 0 2px 8px rgba(251, 185, 44, 0.35);
+            margin-left: 0.5rem;
+            transition: all 0.25s ease !important;
+        }
+
+        .nav-cta-pill:hover {
+            background: var(--color-accent-hover) !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(251, 185, 44, 0.45);
+        }
+
+        /* ===== Hero Section Institucional ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 55%, #154cbd 100%);
+            color: white;
+            padding: 5.5rem 2rem 6.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dinamismo del Isotipo: círculos concéntricos y órbitas */
+        .hero-bg-shapes {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .orbit-dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.12;
+            animation: pulseSlow 8s ease-in-out infinite alternate;
+        }
+
+        .dot-1 {
+            width: 480px;
+            height: 480px;
+            top: -160px;
+            right: -100px;
+            background: radial-gradient(circle, var(--color-accent) 0%, rgba(251, 185, 44, 0) 70%);
+            animation-delay: 0s;
+        }
+
+        .dot-2 {
+            width: 380px;
+            height: 380px;
+            bottom: -120px;
+            left: -80px;
+            background: radial-gradient(circle, #3b82f6 0%, rgba(59, 130, 246, 0) 70%);
+            animation-delay: 2s;
+        }
+
+        .dot-3 {
+            width: 140px;
+            height: 140px;
+            top: 25%;
+            left: 12%;
+            background: var(--color-accent);
+            opacity: 0.08;
+            filter: blur(20px);
+        }
+
+        .dot-4 {
+            width: 90px;
+            height: 90px;
+            bottom: 30%;
+            right: 15%;
+            background: var(--color-primary-soft);
+            opacity: 0.06;
+            filter: blur(15px);
+        }
+
+        .hero-content {
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge-wrap {
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(251, 185, 44, 0.4);
+            color: var(--color-accent);
+            padding: 0.4rem 1.15rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+            animation: fadeInUp 0.7s ease;
+        }
+
+        .hero h2 {
+            font-size: 2.85rem;
+            margin-bottom: 1.25rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+            line-height: 1.18;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero p {
+            font-size: 1.18rem;
+            margin-bottom: 2.25rem;
+            color: rgba(255, 255, 255, 0.92);
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.65;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* Botones Call To Action del Hero */
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.98rem;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Botón píldora dorada oficial (Manual Pág 10) */
+        .btn-pill-gold {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            box-shadow: 0 6px 20px rgba(251, 185, 44, 0.4);
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-pill-gold:hover {
+            background: var(--color-accent-hover);
+            border-color: var(--color-accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(251, 185, 44, 0.55);
+            color: var(--color-primary-dark);
+        }
+
+        .btn-hero-outline {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(6px);
+        }
+
+        .btn-hero-outline:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            color: white;
+        }
+
+        /* Tarjetas de estadísticas */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2.75rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(7, 38, 110, 0.45);
+            padding: 1.25rem 2.25rem;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(251, 185, 44, 0.25);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+            min-width: 190px;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-accent);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.75rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.2rem;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Barra de acceso rápido (Manual Pág 10) */
+        .hero-quicknav {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.55rem 1.25rem;
+            border-radius: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .quicknav-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-right: 0.25rem;
+        }
+
+        .quicknav-pill {
+            background: rgba(255, 255, 255, 0.14);
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .quicknav-pill:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            border-color: var(--color-accent);
+            transform: translateY(-1px);
+        }
+
+        /* ===== Secciones Generales ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-primary-dark);
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 3rem;
+            color: var(--color-gray-600);
+            font-size: 1.08rem;
+            line-height: 1.6;
+        }
+
+        /* ===== Pilares Section ===== */
+        .pilares-section {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem;
+        }
+
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pilar-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.25rem 1.75rem;
+            box-shadow: 0 4px 18px rgba(13, 57, 150, 0.06);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--color-neutral-border);
+            border-top: 5px solid var(--pilar-color);
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease both;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pilar-card:nth-child(1) { --pilar-color: var(--color-observatorio); animation-delay: 0.1s; }
+        .pilar-card:nth-child(2) { --pilar-color: var(--color-herramientas); animation-delay: 0.2s; }
+        .pilar-card:nth-child(3) { --pilar-color: var(--color-investigacion); animation-delay: 0.3s; }
+        .pilar-card:nth-child(4) { --pilar-color: var(--color-formacion); animation-delay: 0.4s; }
+        .pilar-card:nth-child(5) { --pilar-color: var(--color-ecosistema); animation-delay: 0.5s; }
+
+        .pilar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(13, 57, 150, 0.12);
+            border-color: var(--pilar-color);
+        }
+
+        .pilar-icon {
+            font-size: 2.6rem;
+            margin-bottom: 1.25rem;
+            display: inline-block;
+        }
+
+        .pilar-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--pilar-color);
+            font-weight: 700;
+        }
+
+        .pilar-description {
+            color: var(--color-gray-700);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .pilar-features {
+            list-style: none;
+            padding-left: 0;
+            margin-top: auto;
+        }
+
+        .pilar-features li {
+            padding: 0.45rem 0;
+            font-size: 0.88rem;
+            color: var(--color-gray-800);
+            border-bottom: 1px solid var(--color-gray-100);
+            display: flex;
+            align-items: center;
+        }
+
+        .pilar-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pilar-features li::before {
+            content: "✓";
+            color: var(--pilar-color);
+            font-weight: 800;
+            margin-right: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Productos Digitales / Asistentes IA ===== */
+        .productos-section {
+            background: var(--color-gray-50);
+            padding: 5.5rem 2rem;
+            border-top: 1px solid var(--color-neutral-border);
+            border-bottom: 1px solid var(--color-neutral-border);
+        }
+
+        .productos-content {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .productos-categoria {
+            margin-bottom: 4rem;
+        }
+
+        .productos-categoria:last-child {
+            margin-bottom: 0;
+        }
+
+        .categoria-title {
+            font-size: 1.55rem;
+            margin-bottom: 2rem;
+            color: var(--color-primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        .categoria-icon {
+            font-size: 1.85rem;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .producto-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(13, 57, 150, 0.05);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--color-neutral-border);
+            border-left: 5px solid var(--color-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .producto-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .producto-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .producto-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(13, 57, 150, 0.12);
+            border-color: var(--color-accent);
+            border-left-color: var(--color-accent);
+        }
+
+        .producto-destacado {
+            border-left-color: var(--color-primary);
+            background: linear-gradient(135deg, white 0%, var(--color-primary-soft) 100%);
+        }
+
+        .producto-icon {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .producto-card:hover .producto-icon {
+            transform: scale(1.12);
+        }
+
+        .producto-title {
+            font-size: 1.22rem;
+            margin-bottom: 0.6rem;
+            color: var(--color-primary-dark);
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        .producto-description {
+            color: var(--color-gray-700);
+            font-size: 0.94rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1.25rem;
+        }
+
+        .producto-badges-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .producto-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.76rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            border: 1px solid rgba(13, 57, 150, 0.15);
+        }
+
+        .producto-badge-new {
+            background: var(--color-accent-soft);
+            color: var(--color-accent-dark);
+            border-color: rgba(251, 185, 44, 0.5);
+        }
+
+        .producto-action-link {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: auto;
+            transition: gap 0.2s ease, color 0.2s ease;
+        }
+
+        .producto-card:hover .producto-action-link {
+            color: var(--color-primary-light);
+            gap: 0.7rem;
+        }
+
+        /* ===== Informes y Publicaciones ===== */
+        .informes-section {
+            background: white;
+            padding: 5.5rem 2rem;
+        }
+
+        .reportes-especiales-section {
+            background: var(--color-gray-50);
+            border-top: 1px solid var(--color-neutral-border);
+        }
+
+        .informes-content {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* Buscador en la cabecera de la lista */
+        .informes-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .informes-count {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+        }
+
+        .informes-search-box {
+            position: relative;
+        }
+
+        .informes-search-input {
+            width: 100%;
+            padding: 0.55rem 0.85rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .informes-search-input::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .informes-search-input:focus {
+            background: white;
+            color: var(--color-gray-900);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(251, 185, 44, 0.35);
+        }
+
+        .informes-search-input:focus::placeholder {
+            color: var(--color-gray-600);
+        }
+
+        .informes-panel {
+            display: grid;
+            grid-template-columns: 390px 1fr;
+            gap: 0;
+            margin-top: 1.75rem;
+            border: 1px solid var(--color-neutral-border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(13, 57, 150, 0.08);
+            height: 660px;
+        }
+
+        .informes-list {
+            background: var(--color-gray-50);
+            overflow-y: auto;
+            border-right: 1px solid var(--color-neutral-border);
+        }
+
+        .informes-list-header {
+            position: sticky;
+            top: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 1rem 1.25rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            z-index: 2;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .informe-item {
+            padding: 1.1rem 1.25rem;
+            border-bottom: 1px solid var(--color-gray-200);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            background: white;
+        }
+
+        .informe-item:hover {
+            background: var(--color-gray-100);
+        }
+
+        .informe-item.active {
+            background: var(--color-primary-soft);
+            border-left: 5px solid var(--color-primary);
+            padding-left: calc(1.25rem - 5px);
+        }
+
+        .informe-item-icon {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin-top: 2px;
+            transition: background 0.2s ease;
+        }
+
+        .informe-item.active .informe-item-icon {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            box-shadow: 0 2px 8px rgba(251, 185, 44, 0.4);
+        }
+
+        .informe-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .informe-item-title {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-gray-900);
+            line-height: 1.4;
+            margin-bottom: 0.25rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .informe-item.active .informe-item-title {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .informe-item-meta {
+            font-size: 0.76rem;
+            color: var(--color-gray-600);
+            font-weight: 500;
+        }
+
+        .informes-viewer {
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .viewer-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.85rem 1.35rem;
+            background: var(--color-gray-100);
+            border-bottom: 1px solid var(--color-neutral-border);
+            gap: 1rem;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        .viewer-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.96rem;
+            color: var(--color-primary-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+
+        .viewer-actions {
+            display: flex;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .btn-toolbar {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.55rem 1.15rem;
+            border-radius: 50px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.84rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-toolbar-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-toolbar-primary:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(13, 57, 150, 0.25);
+        }
+
+        .btn-toolbar-outline {
+            background: white;
+            color: var(--color-primary);
+            border: 1px solid var(--color-neutral-border);
+        }
+
+        .btn-toolbar-outline:hover {
+            background: var(--color-primary-soft);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .viewer-frame {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: var(--color-gray-100);
+        }
+
+        /* Tabs de Provincias para el ICC */
+        .province-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .province-tab-btn {
+            background: white;
+            border: 1px solid var(--color-neutral-border);
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-gray-800);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .province-tab-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: var(--color-primary-soft);
+        }
+
+        .province-tab-btn.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            box-shadow: 0 2px 8px rgba(13, 57, 150, 0.3);
+        }
+
+        /* ===== Sobre Nosotros Section ===== */
+        .nosotros-section {
+            background: white;
+            padding: 5.5rem 2rem;
+            border-top: 1px solid var(--color-neutral-border);
+        }
+
+        .nosotros-content {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .nosotros-intro-card {
+            background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-accent-soft) 100%);
+            border: 1px solid var(--color-neutral-border);
+            border-left: 5px solid var(--color-primary);
+            border-radius: 18px;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 20px rgba(13, 57, 150, 0.04);
+        }
+
+        .nosotros-intro-text {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .nosotros-intro-text h3 {
+            color: var(--color-primary-dark);
+            font-size: 1.45rem;
+            margin-bottom: 0.85rem;
+            font-weight: 700;
+        }
+
+        .nosotros-intro-text p {
+            color: var(--color-gray-800);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        .nosotros-jefatura-badge {
+            background: white;
+            border: 1px solid var(--color-neutral-border);
+            border-radius: 14px;
+            padding: 1.75rem 2.25rem;
+            box-shadow: 0 6px 18px rgba(13, 57, 150, 0.06);
+            text-align: center;
+            min-width: 290px;
+            border-top: 4px solid var(--color-accent);
+        }
+
+        .nosotros-jefatura-badge .jefatura-label {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-gray-600);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .nosotros-jefatura-badge .jefatura-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+        }
+
+        .nosotros-jefatura-badge .jefatura-sub {
+            font-size: 0.88rem;
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-top: 0.35rem;
+        }
+
+        .equipo-subheading {
+            text-align: center;
+            font-size: 1.45rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: 2.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .equipo-subheading::before,
+        .equipo-subheading::after {
+            content: '';
+            height: 2.5px;
+            width: 50px;
+            background: var(--color-accent);
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .equipo-coordinador-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .equipo-investigadoras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        /* Tarjetas de Equipo (CIODD Style + OMiPYME Brand) */
+        .item-nosotros {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(13, 57, 150, 0.06);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--color-neutral-border);
+        }
+
+        .item-nosotros:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(13, 57, 150, 0.15);
+            border-color: var(--color-primary-light);
+        }
+
+        .item-nosotros-lider {
+            max-width: 380px;
+            width: 100%;
+            border-top: 5px solid var(--color-accent);
+            box-shadow: 0 8px 28px rgba(13, 57, 150, 0.12);
+        }
+
+        .img-nosotros {
+            padding: 2.5rem 1rem 1.5rem;
+            background: linear-gradient(180deg, var(--color-gray-50) 0%, white 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .img-nosotros img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 8px 24px rgba(13, 57, 150, 0.18);
+            transition: transform 0.3s ease;
+        }
+
+        .item-nosotros:hover .img-nosotros img {
+            transform: scale(1.05);
+        }
+
+        .title-nosotros {
+            background: var(--color-primary);
+            color: white;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 4.25rem;
+        }
+
+        .item-nosotros-lider .title-nosotros {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+        }
+
+        .title-nosotros h3 {
+            margin: 0;
+            font-size: 1.12rem;
+            line-height: 1.35;
+            font-weight: 700;
+            color: white;
+            font-family: var(--font-heading);
+        }
+
+        .data-nosotros {
+            padding: 1.5rem 1.25rem;
+            background: var(--color-gray-50);
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.9rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .data-nosotros .rol-badge {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-primary);
+            background: var(--color-primary-soft);
+            padding: 0.35rem 0.95rem;
+            border-radius: 50px;
+            align-self: center;
+            border: 1px solid rgba(13, 57, 150, 0.15);
+        }
+
+        .item-nosotros-lider .data-nosotros .rol-badge {
+            color: var(--color-accent-dark);
+            background: var(--color-accent-soft);
+            border: 1px solid rgba(251, 185, 44, 0.5);
+        }
+
+        .data-nosotros .unidad-info {
+            font-size: 0.88rem;
+            color: var(--color-gray-600);
+            line-height: 1.5;
+        }
+
+        .data-nosotros .contacto-box {
+            margin-top: auto;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--color-neutral-border);
+        }
+
+        .data-nosotros .a-mail {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            word-break: break-all;
+        }
+
+        .data-nosotros .a-mail:hover {
+            color: var(--color-accent-hover);
+            text-decoration: underline;
+        }
+
+        /* ===== Ecosistema Section ===== */
+        .ecosistema-section {
+            background: var(--color-gray-50);
+            padding: 5.5rem 2rem;
+            border-top: 1px solid var(--color-neutral-border);
+        }
+
+        .ecosistema-content {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .ecosistema-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .ecosistema-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(13, 57, 150, 0.05);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--color-neutral-border);
+        }
+
+        .ecosistema-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(13, 57, 150, 0.12);
+            border-color: var(--color-primary-light);
+        }
+
+        .ecosistema-card-img {
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+            background: white;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--color-neutral-border);
+        }
+
+        .ecosistema-card-body {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .ecosistema-card-title {
+            font-size: 1.18rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        .ecosistema-card-desc {
+            color: var(--color-gray-700);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1.25rem;
+        }
+
+        .ecosistema-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.35rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.86rem;
+            transition: all 0.25s ease;
+            align-self: flex-start;
+        }
+
+        .ecosistema-card-btn:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 57, 150, 0.3);
+        }
+
+        /* ===== Normativa Section ===== */
+        .normativa-section {
+            background: white;
+            padding: 4.5rem 2rem;
+        }
+
+        .normativa-content {
+            max-width: 840px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .normativa-card {
+            background: var(--color-gray-50);
+            border: 2px solid var(--color-neutral-border);
+            border-radius: 18px;
+            padding: 2.75rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .normativa-card p {
+            color: var(--color-gray-800);
+            margin-bottom: 1.75rem;
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(13, 57, 150, 0.3);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== Contacto Section ===== */
+        .contacto-section {
+            background: var(--color-gray-50);
+            padding: 5.5rem 2rem;
+            border-top: 1px solid var(--color-neutral-border);
+        }
+
+        .contacto-content {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .contacto-form-wrapper {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(13, 57, 150, 0.06);
+            border: 1px solid var(--color-neutral-border);
+            margin-top: 1.5rem;
+        }
+
+        .contacto-form-wrapper iframe {
+            display: block;
+            width: 100%;
+            min-height: 600px;
+            border: none;
+        }
+
+        /* ===== CTA Final Section ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: 4.5rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--color-accent);
+        }
+
+        .cta-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-content p {
+            opacity: 0.92;
+            margin-bottom: 2rem;
+            font-size: 1.12rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--color-primary);
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            background: var(--color-accent-soft);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: translateY(-2px);
+            border-color: white;
+        }
+
+        /* ===== Footer Institucional ===== */
+        .footer {
+            background: var(--color-primary-dark);
+            color: white;
+            padding: 0;
+        }
+
+        .footer-logos {
+            background: var(--color-primary);
+            padding: 1.75rem 2rem;
+            text-align: center;
+            border-bottom: 3.5px solid var(--color-accent);
+        }
+
+        .footer-logos-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.25rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-img {
+            height: 46px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-logo-separator {
+            width: 1.5px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-content {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.25rem;
+            padding: 3.5rem 2rem 2.5rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.4rem 0;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.88rem;
+        }
+
+        /* Botón Volver Arriba */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(251, 185, 44, 0.45);
+        }
+
+        /* ===== Animaciones ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseSlow {
+            from {
+                transform: scale(0.95);
+                opacity: 0.1;
+            }
+            to {
+                transform: scale(1.05);
+                opacity: 0.18;
+            }
+        }
+
+        /* ===== Responsive Media Queries ===== */
+        .mobile-menu-btn {
+            display: none;
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: 8px;
+            color: var(--color-primary);
+            padding: 0.5rem 0.65rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--color-primary-soft);
+        }
+
+        @media (max-width: 1024px) {
+            .ecosistema-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .header-nav a {
+                padding: 0.45rem 0.65rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .header-content {
+                position: relative;
+                flex-wrap: wrap;
+            }
+
+            .header-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0.4rem;
+                padding: 1rem 0 0.5rem;
+                border-top: 1px solid var(--color-neutral-border);
+                animation: fadeInNav 0.25s ease forwards;
+            }
+
+            .header-nav.nav-open {
+                display: flex !important;
+            }
+
+            .header-nav a {
+                padding: 0.75rem 1rem;
+                background: var(--color-gray-50);
+                border-radius: 8px;
+                text-align: center;
+                font-size: 0.95rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-nav a:hover,
+            .header-nav a:active {
+                background: var(--color-primary-soft);
+                color: var(--color-primary);
+            }
+
+            .nav-cta-pill {
+                margin-left: 0 !important;
+                margin-top: 0.4rem;
+            }
+
+            .informes-panel {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .informes-list {
+                border-right: none;
+                border-bottom: 1px solid var(--color-neutral-border);
+                max-height: 380px;
+            }
+
+            .informes-viewer {
+                min-height: 520px;
+            }
+        }
+
+        @keyframes fadeInNav {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3.5rem 1.5rem 4.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.85rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat {
+                padding: 1rem 1.5rem;
+                min-width: 140px;
+                flex: 1 1 40%;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .pilares-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categoria-title {
+                font-size: 1.35rem;
+            }
+
+            .section-title {
+                font-size: 1.65rem;
+            }
+
+            .nosotros-section {
+                padding: 3.5rem 1rem;
+            }
+
+            .nosotros-intro-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .nosotros-jefatura-badge {
+                min-width: 100%;
+                padding: 1.25rem 1rem;
+            }
+
+            .item-nosotros {
+                max-width: 100%;
+            }
+
+            .img-nosotros img {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-top-bar-content {
+                flex-direction: column;
+                gap: 0.4rem;
+                text-align: center;
+            }
+            .header-top-bar-links a {
+                margin: 0 0.35rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+                gap: 0.85rem;
+            }
+            .btn {
+                width: 100%;
+            }
+            .ecosistema-grid {
+                grid-template-columns: 1fr;
+            }
+            .viewer-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+            .viewer-actions {
+                width: 100%;
+                display: flex;
+                gap: 0.5rem;
+            }
+            .viewer-actions a {
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    
+    
+        /* ===================================================
+           SISTEMA DE ACCESIBILIDAD UNIVERSAL (WCAG 2.1 AA)
+           =================================================== */
+
+        /* Indicador de Foco Visual Nítido de Alto Contraste */
+        :focus-visible {
+            outline: 3px solid var(--color-accent) !important;
+            outline-offset: 3px !important;
+            box-shadow: 0 0 0 5px rgba(13, 57, 150, 0.75) !important;
+        }
+
+        /* Tamaños de Texto Relativos */
+        html.a11y-font-lg {
+            font-size: 115% !important;
+        }
+
+        html.a11y-font-xl {
+            font-size: 130% !important;
+        }
+
+        /* Modo Alto Contraste (WCAG AAA) */
+        html.a11y-high-contrast {
+            filter: contrast(120%);
+        }
+
+        html.a11y-high-contrast body {
+            background-color: #0b0f19 !important;
+            color: #ffffff !important;
+        }
+
+        html.a11y-high-contrast .header,
+        html.a11y-high-contrast .header-top-bar,
+        html.a11y-high-contrast .pilar-card,
+        html.a11y-high-contrast .producto-card,
+        html.a11y-high-contrast .informes-panel,
+        html.a11y-high-contrast .informes-list,
+        html.a11y-high-contrast .informe-item,
+        html.a11y-high-contrast .informes-viewer,
+        html.a11y-high-contrast .viewer-toolbar,
+        html.a11y-high-contrast .item-nosotros,
+        html.a11y-high-contrast .nosotros-intro-card,
+        html.a11y-high-contrast .nosotros-jefatura-badge,
+        html.a11y-high-contrast .ecosistema-card,
+        html.a11y-high-contrast .normativa-card,
+        html.a11y-high-contrast .contacto-form-wrapper,
+        html.a11y-high-contrast .data-nosotros,
+        html.a11y-high-contrast .a11y-panel {
+            background-color: #111827 !important;
+            color: #ffffff !important;
+            border-color: #FBB92C !important;
+        }
+
+        html.a11y-high-contrast h1,
+        html.a11y-high-contrast h2,
+        html.a11y-high-contrast h3,
+        html.a11y-high-contrast .section-title,
+        html.a11y-high-contrast .pilar-title,
+        html.a11y-high-contrast .categoria-title,
+        html.a11y-high-contrast .producto-title,
+        html.a11y-high-contrast .viewer-title,
+        html.a11y-high-contrast .stat-number,
+        html.a11y-high-contrast .quicknav-title {
+            color: #FFD700 !important;
+        }
+
+        html.a11y-high-contrast a,
+        html.a11y-high-contrast .header-nav a,
+        html.a11y-high-contrast .a-mail,
+        html.a11y-high-contrast .pilar-features li,
+        html.a11y-high-contrast p,
+        html.a11y-high-contrast span:not(.stat-number):not(.top-bar-badge) {
+            color: #ffffff !important;
+        }
+
+        html.a11y-high-contrast .btn-pill-gold,
+        html.a11y-high-contrast .nav-cta-pill {
+            background-color: #FFD700 !important;
+            color: #000000 !important;
+            font-weight: 800 !important;
+            border: 2px solid #ffffff !important;
+        }
+
+        html.a11y-high-contrast .informe-item.active {
+            background-color: #1e293b !important;
+            border-left: 6px solid #FFD700 !important;
+        }
+
+        /* Modo Escala de Grises */
+        html.a11y-grayscale {
+            filter: grayscale(100%) !important;
+        }
+
+        /* Tipografía para Dislexia / Alta Legibilidad */
+        html.a11y-dyslexia * {
+            font-family: 'OpenDyslexic', 'Trebuchet MS', 'Comic Sans MS', 'Arial', sans-serif !important;
+            letter-spacing: 0.05em !important;
+            word-spacing: 0.08em !important;
+        }
+
+        /* Espaciado de Texto Aumentado */
+        html.a11y-spacing * {
+            line-height: 1.85 !important;
+            letter-spacing: 0.06em !important;
+            word-spacing: 0.1em !important;
+        }
+
+        /* Resaltar Enlaces */
+        html.a11y-highlight-links a:not(.btn):not(.nav-cta-pill):not(.quicknav-pill) {
+            text-decoration: underline 3px !important;
+            text-decoration-color: var(--color-accent) !important;
+            text-underline-offset: 4px !important;
+            background-color: rgba(251, 185, 44, 0.15) !important;
+            padding: 2px 4px !important;
+            border-radius: 4px !important;
+            color: #0D3996 !important;
+            font-weight: 700 !important;
+        }
+
+        html.a11y-high-contrast.a11y-highlight-links a:not(.btn):not(.nav-cta-pill):not(.quicknav-pill) {
+            color: #FFD700 !important;
+            background-color: #1e293b !important;
+        }
+
+        /* Reducir Movimiento */
+        html.a11y-reduce-motion *,
+        html.a11y-reduce-motion *::before,
+        html.a11y-reduce-motion *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+            scroll-behavior: auto !important;
+        }
+
+        /* Guía / Regla de Lectura */
+        .a11y-reading-guide {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 38px;
+            background: rgba(251, 185, 44, 0.22);
+            border-top: 2px solid var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+            pointer-events: none;
+            z-index: 9998;
+            display: none;
+            box-shadow: 0 0 12px rgba(251, 185, 44, 0.35);
+            transition: top 0.04s ease-out;
+        }
+
+        .a11y-reading-guide.active {
+            display: block;
+        }
+
+        /* Botón Flotante de Accesibilidad ♿ */
+        .a11y-toggle-btn {
+            position: fixed;
+            top: 45%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-accent);
+            border-right: none;
+            border-radius: 12px 0 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9990;
+            box-shadow: -4px 4px 18px rgba(13, 57, 150, 0.3);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .a11y-toggle-btn:hover {
+            width: 54px;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            box-shadow: -6px 6px 22px rgba(251, 185, 44, 0.45);
+        }
+
+        .a11y-toggle-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+
+        /* Panel Desplegable de Accesibilidad */
+        .a11y-panel {
+            position: fixed;
+            top: 50%;
+            right: -390px;
+            transform: translateY(-50%);
+            width: 360px;
+            max-width: calc(100vw - 32px);
+            background: white;
+            border-radius: 20px 0 0 20px;
+            box-shadow: -8px 0 35px rgba(0, 0, 0, 0.22);
+            border: 2px solid var(--color-accent);
+            border-right: none;
+            z-index: 9995;
+            padding: 1.5rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .a11y-panel.open {
+            right: 0;
+        }
+
+        .a11y-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-neutral-border);
+            margin-bottom: 1.25rem;
+        }
+
+        .a11y-panel-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.18rem;
+            color: var(--color-primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .a11y-close-btn {
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-neutral-border);
+            color: var(--color-gray-800);
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .a11y-close-btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .a11y-section-title {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-gray-600);
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+        }
+
+        .a11y-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.65rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .a11y-btn {
+            background: var(--color-gray-50);
+            border: 1.5px solid var(--color-neutral-border);
+            border-radius: 12px;
+            padding: 0.75rem 0.5rem;
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--color-gray-800);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .a11y-btn:hover {
+            border-color: var(--color-primary);
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            transform: translateY(-1px);
+        }
+
+        .a11y-btn.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 4px 12px rgba(13, 57, 150, 0.25);
+        }
+
+        .a11y-btn-icon {
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .a11y-actions-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .a11y-action-btn {
+            flex: 1;
+            padding: 0.65rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .a11y-reset-btn {
+            background: white;
+            border: 1px solid var(--color-neutral-border);
+            color: var(--color-gray-700);
+        }
+
+        .a11y-reset-btn:hover {
+            background: #fee2e2;
+            color: #dc2626;
+            border-color: #fca5a5;
+        }
+
+        .a11y-shortcuts-btn {
+            background: var(--color-primary-soft);
+            border: 1px solid rgba(13, 57, 150, 0.2);
+            color: var(--color-primary);
+        }
+
+        .a11y-shortcuts-btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .a11y-footer-link {
+            display: block;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .a11y-footer-link:hover {
+            color: var(--color-accent-hover);
+        }
+
+        /* Diálogo Modal de Atajos de Teclado */
+        .a11y-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .a11y-modal-backdrop.open {
+            display: flex;
+        }
+
+        .a11y-modal {
+            background: white;
+            border-radius: 18px;
+            max-width: 520px;
+            width: 100%;
+            padding: 2rem;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid var(--color-accent);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .a11y-modal-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .a11y-shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 0.9rem;
+        }
+
+        .a11y-shortcut-table th,
+        .a11y-shortcut-table td {
+            padding: 0.65rem 0.75rem;
+            border-bottom: 1px solid var(--color-neutral-border);
+            text-align: left;
+        }
+
+        .a11y-shortcut-table th {
+            background: var(--color-gray-50);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        .kbd-key {
+            display: inline-block;
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-gray-300);
+            border-radius: 4px;
+            padding: 0.15rem 0.45rem;
+            font-family: monospace;
+            font-size: 0.82rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            color: var(--color-gray-800);
+        }
+
+        /* Elemento invisible para anuncios ARIA Live */
+        .a11y-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    
+    
+
+        /* Estilos específicos para la Declaración de Accesibilidad */
+        .a11y-page-wrapper {
+            background-color: var(--color-gray-50);
+            padding: 3.5rem 0 5rem 0;
+            position: relative;
+        }
+
+        .a11y-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .a11y-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-neutral-border);
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .a11y-card:hover {
+            box-shadow: 0 16px 36px rgba(13, 57, 150, 0.08);
+        }
+
+        .a11y-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(13, 57, 150, 0.15);
+        }
+
+        .a11y-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-gray-100);
+        }
+
+        .a11y-card-icon {
+            width: 46px;
+            height: 46px;
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(13, 57, 150, 0.12);
+        }
+
+        .a11y-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-primary-dark);
+            margin: 0;
+        }
+
+        .a11y-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .a11y-feature-item {
+            background: var(--color-gray-50);
+            border-radius: 14px;
+            padding: 1.25rem;
+            border: 1px solid var(--color-neutral-border);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .a11y-feature-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .a11y-feature-item p {
+            font-size: 0.88rem;
+            color: var(--color-gray-700);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .compliance-banner {
+            background: linear-gradient(135deg, #07266E 0%, #0D3996 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border: 2px solid var(--color-uned-gold);
+        }
+
+        .compliance-banner-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .compliance-banner-text h4 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--color-uned-gold);
+            margin-bottom: 0.35rem;
+        }
+
+        .compliance-banner-text p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .contact-box {
+            background: var(--color-primary-soft);
+            border: 2px solid var(--color-primary);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.25rem;
+        }
+
+        .contact-box h4 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--color-primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .a11y-spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        .a11y-spec-table th,
+        .a11y-spec-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--color-neutral-border);
+            text-align: left;
+        }
+
+        .a11y-spec-table th {
+            background: var(--color-primary-soft);
+            color: var(--color-primary-dark);
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        .a11y-spec-table tr:hover td {
+            background: var(--color-gray-50);
+        }
+
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .status-tag.success {
+            background: #dcfce7;
+            color: #15803d;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header Institucional UNED / OMiPYME -->
+    <header class="header">
+        <div class="header-top-bar">
+            <div class="header-top-bar-content">
+                <div class="top-bar-left">
+                    <span class="top-bar-badge">UNED</span>
+                    <span>Universidad Estatal a Distancia &middot; Costa Rica</span>
+                </div>
+                <div class="header-top-bar-links">
+                    <a href="accesibilidad.html" style="font-weight: 700; color: var(--color-uned-gold);" aria-current="page"><span style="margin-right: 3px;">♿</span>Accesibilidad</a>
+                    <a href="https://uned.ac.cr" target="_blank" rel="noopener">Portal UNED</a>
+                    <a href="https://investiga.uned.ac.cr/" target="_blank" rel="noopener">Vicerrectoría de Investigación</a>
+                    <a href="https://new.express.adobe.com/webpage/jOEDPKYxrzkdc" target="_blank" rel="noopener">Normativa GPTs</a>
+                    <a href="https://new.express.adobe.com/webpage/Jq08Z5Mcwba3U" target="_blank" rel="noopener">GPTs Especializados</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link" aria-label="Ir a inicio OMiPYME">
+                    <img src="logos/Logo UNED azul.png" alt="UNED - Universidad Estatal a Distancia" class="logo-img logo-uned">
+                    <div class="logo-separator"></div>
+                    <img src="logos/Logo OMIPYME 2025.png" alt="OMiPYME - Observatorio de Micro, Pequeñas y Medianas Empresas" class="logo-img logo-omipyme">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="header-nav" id="header-nav">
+                <a href="index.html#pilares">Pilares</a>
+                <a href="index.html#asistentes">Asistentes IA</a>
+                <a href="index.html#informes">Informes</a>
+                <a href="index.html#reportes-especiales">Reportes ICC</a>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="accesibilidad.html" class="active" style="color: var(--color-primary-dark); font-weight: 700;">Accesibilidad</a>
+                <a href="index.html#contacto">Contacto</a>
+                <a href="index.html#asistentes" class="nav-cta-pill">Explorar GPTs</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Accesibilidad -->
+    <section class="hero" style="padding: 4rem 1.5rem 3.5rem 1.5rem;">
+        <div class="hero-bg-shapes" aria-hidden="true">
+            <div class="orbit-dot dot-1"></div>
+            <div class="orbit-dot dot-2"></div>
+            <div class="orbit-dot dot-3"></div>
+            <div class="orbit-dot dot-4"></div>
+        </div>
+        <div class="hero-content" style="max-width: 850px;">
+            <div class="hero-badge-wrap">
+                <span class="hero-badge">Vicerrectoría de Investigación &middot; UNED Costa Rica</span>
+            </div>
+            <h1 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: white; margin-bottom: 1rem; line-height: 1.15;">
+                Declaración de Accesibilidad Web
+            </h1>
+            <p class="hero-subtitle" style="max-width: 720px; margin: 0 auto 1.5rem auto; font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">
+                Compromiso permanente con la inclusión digital, el acceso universal y el cumplimiento estricto de las directrices WCAG 2.1 Nivel AA y la Ley 7600 de Costa Rica.
+            </p>
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                <span class="a11y-badge-pill" style="background: rgba(255, 255, 255, 0.15); color: #FFD700; border-color: rgba(251, 185, 44, 0.4);">
+                    <span>✔</span> WCAG 2.1 AA
+                </span>
+                <span class="a11y-badge-pill" style="background: rgba(255, 255, 255, 0.15); color: white; border-color: rgba(255, 255, 255, 0.3);">
+                    <span>⚖️</span> Ley 7600 Costa Rica
+                </span>
+                <span class="a11y-badge-pill" style="background: rgba(255, 255, 255, 0.15); color: white; border-color: rgba(255, 255, 255, 0.3);">
+                    <span>🌐</span> W3C WAI Acreditado
+                </span>
+                <span class="a11y-badge-pill" style="background: rgba(255, 255, 255, 0.15); color: white; border-color: rgba(255, 255, 255, 0.3);">
+                    <span>📅</span> Actualizado: 2026
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Contenido -->
+    <main id="main-content" class="a11y-page-wrapper">
+        <div class="a11y-container">
+            
+            <!-- 1. Compromiso Institucional -->
+            <section class="a11y-card">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">🏛️</div>
+                    <div>
+                        <h2 class="a11y-card-title">Compromiso Institucional con la Accesibilidad</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Universidad Estatal a Distancia &middot; Vicerrectoría de Investigación</span>
+                    </div>
+                </div>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-gray-800);">
+                    La <strong>Universidad Estatal a Distancia (UNED)</strong> y el <strong>Observatorio de Micro, Pequeñas y Medianas Empresas (OMiPYME)</strong> tienen como principio rector el acceso equitativo, democrático y universal al conocimiento, la investigación y las tecnologías de la información para todas las personas, sin distinción de sus capacidades funcionales, condiciones físicas, sensoriales o tecnologías de asistencia empleadas.
+                </p>
+                <div class="compliance-banner">
+                    <div class="compliance-banner-icon">🎯</div>
+                    <div class="compliance-banner-text">
+                        <h4>Estándar de Conformidad: Nivel AA (WCAG 2.1)</h4>
+                        <p>
+                            Este portal web ha sido diseñado, desarrollado y auditado siguiendo las <strong>Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1 en su nivel AA</strong> del Consorcio de la Red Mundial (W3C), así como la legislación costarricense estipulada en la <strong>Ley de Igualdad de Oportunidades para las Personas con Discapacidad (Ley 7600)</strong> y su normativa supletoria en el sector público.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Funcionalidades del Widget y Herramientas Integradas -->
+            <section class="a11y-card">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">♿</div>
+                    <div>
+                        <h2 class="a11y-card-title">Herramientas Asistivas y Controles Integrados</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Disponibles en todo momento mediante el botón flotante lateral o el atajo Alt + A</span>
+                    </div>
+                </div>
+                <p style="color: var(--color-gray-700); line-height: 1.6;">
+                    El portal incorpora un sistema de adaptación sensorial y cognitiva configurable por cada usuario, cuyas preferencias quedan memorizadas de forma segura en su navegador:
+                </p>
+
+                <div class="a11y-feature-grid">
+                    <div class="a11y-feature-item">
+                        <h4><span>🔍</span> Escala de Texto Progresiva</h4>
+                        <p>Ajuste dinámico del tamaño de fuente en 3 niveles (Normal 100%, Mediano 115% y Grande 130%) preservando la jerarquía visual sin desbordamientos de maquetación.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>🌓</span> Modo de Alto Contraste (AAA)</h4>
+                        <p>Paleta optimizada con fondo oscuro (#0b0f19) y texto en amarillo dorado institucional (#FFD700) y blanco puro, superando una relación de contraste de 7:1 para personas con baja visión.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>🔘</span> Modo Monocromático</h4>
+                        <p>Filtro en escala de grises al 100% que permite examinar y leer la información eliminando estímulos cromáticos o distracciones por saturación de color.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>📖</span> Tipografía para Dislexia</h4>
+                        <p>Sustitución tipográfica por familias con mayor peso inferior y diferenciación asimétrica de glifos para facilitar la fijación de la lectura en personas con dislexia.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>↔️</span> Interlineado y Espaciado Ampliado</h4>
+                        <p>Incremento del espaciado entre líneas (1.85), palabras y caracteres para mitigar la fatiga visual y mejorar la legibilidad en lecturas prolongadas.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>🔗</span> Enlaces Destacados</h4>
+                        <p>Subrayado visible con contraste acentuado y fondo translúcido sobre todos los hipervínculos interactivos, distinguiéndolos de inmediato del texto estándar.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>📏</span> Regla y Guía de Lectura Visual</h4>
+                        <p>Banda horizontal interactiva que sigue la posición del cursor en tiempo real para focalizar la lectura párrafo a párrafo y evitar saltos involuntarios de línea.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>🛑</span> Detener y Reducir Animaciones</h4>
+                        <p>Desactivación inmediata de transiciones CSS, efectos de desplazamiento y animaciones decorativas para personas con trastornos vestibulares o fotosensibilidad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Navegación por Teclado y Atajos -->
+            <section class="a11y-card">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">⌨️</div>
+                    <div>
+                        <h2 class="a11y-card-title">Navegación Total por Teclado y Atajos</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Interacción al 100% sin necesidad de dispositivo apuntador o ratón</span>
+                    </div>
+                </div>
+                <p style="color: var(--color-gray-700); line-height: 1.6;">
+                    El portal implementa un enlace de salto de contenido (<em>Skip Link</em>), foco visual de alto contraste de 3px con halo protector, y comandos de acceso rápido accesibles mediante combinaciones de la tecla <span class="kbd-key">Alt</span>:
+                </p>
+
+                <div class="table-responsive">
+                    <table class="a11y-spec-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">Atajo de Teclado</th>
+                                <th style="width: 45%;">Acción Ejecutada</th>
+                                <th style="width: 30%;">Estado de Conformidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">A</span></td>
+                                <td>Abre o cierra el menú interactivo de accesibilidad</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">S</span> / <span class="kbd-key">Tab</span></td>
+                                <td>Salta directo al contenido principal del sitio</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">1</span></td>
+                                <td>Dirige a la página de Inicio / Portal principal</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">2</span></td>
+                                <td>Desplaza a la sección Cinco Pilares del Modelo</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">3</span></td>
+                                <td>Desplaza a la suite de Asistentes IA y GPTs</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">4</span></td>
+                                <td>Desplaza a la Biblioteca de Informes y Estudios</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">5</span></td>
+                                <td>Desplaza al visor de Reportes Especiales ICC por Provincia</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">6</span></td>
+                                <td>Dirige a la página Sobre Nosotros y Equipo OMiPYME</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">7</span></td>
+                                <td>Abre esta Declaración de Accesibilidad Web</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Esc</span></td>
+                                <td>Cierra inmediatamente cualquier menú lateral o modal abierto</td>
+                                <td><span class="status-tag success">✔ Operativo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. Tecnologías Asistivas Compatibles -->
+            <section class="a11y-card">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">🔊</div>
+                    <div>
+                        <h2 class="a11y-card-title">Compatibilidad con Tecnologías de Asistencia</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Lectores de pantalla, navegadores y plataformas soportadas</span>
+                    </div>
+                </div>
+                <p style="color: var(--color-gray-700); line-height: 1.6;">
+                    El código del sitio cuenta con atributos semánticos HTML5, roles WAI-ARIA descriptivos, textos alternativos (<code style="background: var(--color-gray-100); padding: 2px 6px; border-radius: 4px;">alt</code>) en todas las imágenes y un canal dinámico <code style="background: var(--color-gray-100); padding: 2px 6px; border-radius: 4px;">aria-live="polite"</code> que anuncia en tiempo real las acciones ejecutadas por el usuario.
+                </p>
+
+                <div class="a11y-feature-grid" style="margin-top: 1rem;">
+                    <div class="a11y-feature-item" style="border-left-color: var(--color-uned-gold);">
+                        <h4><span>💻</span> Lectores de Pantalla Evaluados</h4>
+                        <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--color-gray-700); margin: 0.5rem 0 0 0; line-height: 1.6;">
+                            <li><strong>NVDA</strong> (Windows) con navegadores Chrome y Firefox</li>
+                            <li><strong>JAWS</strong> (Windows) versiones recientes</li>
+                            <li><strong>VoiceOver</strong> (macOS y Apple iOS) con Safari</li>
+                            <li><strong>TalkBack</strong> (Android OS) con Google Chrome</li>
+                        </ul>
+                    </div>
+                    <div class="a11y-feature-item" style="border-left-color: var(--color-uned-gold);">
+                        <h4><span>🌐</span> Navegadores Web Compatibles</h4>
+                        <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--color-gray-700); margin: 0.5rem 0 0 0; line-height: 1.6;">
+                            <li>Google Chrome (versión 100+)</li>
+                            <li>Mozilla Firefox (versión 100+)</li>
+                            <li>Microsoft Edge (versión Chromium)</li>
+                            <li>Apple Safari (versión 15+)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Metodología de Evaluación y Pruebas -->
+            <section class="a11y-card">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">🧪</div>
+                    <div>
+                        <h2 class="a11y-card-title">Metodología de Evaluación y Auditoría</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Herramientas automáticas y validación manual de conformidad</span>
+                    </div>
+                </div>
+                <p style="color: var(--color-gray-700); line-height: 1.6;">
+                    El portal ha sido auditado utilizando una combinación rigurosa de metodologías automatizadas y pruebas manuales de usabilidad asistiva:
+                </p>
+                <ul style="padding-left: 1.5rem; color: var(--color-gray-800); line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Google Lighthouse & Chrome DevTools:</strong> Auditoría de contraste de color, estructura de encabezados jerárquicos (H1 &rarr; H4), accesibilidad de enlaces y elementos interactivos.</li>
+                    <li><strong>axe DevTools Accessibility Engine:</strong> Verificación de atributos ARIA válidos, ausencia de trampas de teclado y semántica de formularios.</li>
+                    <li><strong>WAVE Web Accessibility Evaluation Tool:</strong> Comprobación de contrastes de color en ratios superiores a 4.5:1 (texto regular) y 3:1 (elementos gráficos y texto de gran tamaño).</li>
+                    <li><strong>Navegación 100% por Teclado:</strong> Verificación exhaustiva de tabulación lógica cíclica sin uso de cursor o dispositivos táctiles.</li>
+                </ul>
+            </section>
+
+            <!-- 6. Limitaciones Conocidas y Plan de Mejora -->
+            <section class="a11y-card">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">📋</div>
+                    <div>
+                        <h2 class="a11y-card-title">Limitaciones Conocidas y Mejora Continua</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Monitoreo y remediación permanente de contenidos</span>
+                    </div>
+                </div>
+                <p style="color: var(--color-gray-700); line-height: 1.6;">
+                    A pesar de nuestro compromiso con el estándar WCAG 2.1 AA, reconocemos que existen algunos desafíos inherentes al acervo documental histórico:
+                </p>
+                <div class="a11y-feature-grid" style="margin-top: 1rem;">
+                    <div class="a11y-feature-item">
+                        <h4><span>📄</span> Informes y Documentos PDF Históricos</h4>
+                        <p>Ciertas publicaciones anteriores al 2022 pueden no contar con etiquetas de estructura completas (Tagged PDF). Estamos trabajando progresivamente en su reprocesamiento y digitalización accesible.</p>
+                    </div>
+                    <div class="a11y-feature-item">
+                        <h4><span>🔗</span> Enlaces a Sitios y Plataformas Externas</h4>
+                        <p>Algunos enlaces externos dirigen a portales gubernamentales o repositorios institucionales de terceros que pueden no cumplir íntegramente con el nivel AA.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Canal de Retroalimentación y Contacto -->
+            <section class="a11y-card" style="border-top: 5px solid var(--color-primary);">
+                <div class="a11y-card-header">
+                    <div class="a11y-card-icon">✉️</div>
+                    <div>
+                        <h2 class="a11y-card-title">Canal de Retroalimentación y Reporte de Barreras</h2>
+                        <span style="font-size: 0.85rem; color: var(--color-gray-600);">Su opinión es fundamental para seguir mejorando la accesibilidad</span>
+                    </div>
+                </div>
+                <p style="color: var(--color-gray-800); line-height: 1.6;">
+                    Si experimenta alguna dificultad para acceder a los contenidos de este portal, identifica alguna barrera digital o desea solicitar información en un formato accesible alternativo, por favor contáctenos a través de nuestros canales oficiales:
+                </p>
+
+                <div class="contact-box">
+                    <h4>Observatorio de MIPYMES (OMiPYME) &middot; UNED Costa Rica</h4>
+                    <p style="margin-bottom: 0.4rem;">
+                        <strong>Correo Electrónico de Accesibilidad:</strong> <a href="mailto:omipymes@uned.ac.cr" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">omipymes@uned.ac.cr</a>
+                    </p>
+                    <p style="margin-bottom: 0.4rem;">
+                        <strong>Central Telefónica:</strong> <a href="tel:+50625272000" style="color: var(--color-primary); font-weight: 600;">+506 2527-2000</a> (Horario: Lunes a Viernes de 8:00 a.m. a 4:30 p.m.)
+                    </p>
+                    <p style="margin-bottom: 0.4rem;">
+                        <strong>Sede Institucional:</strong> Vicerrectoría de Investigación, Universidad Estatal a Distancia, Mercedes de Montes de Oca, San José, Costa Rica.
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--color-gray-700); margin-top: 0.75rem; border-top: 1px solid rgba(13, 57, 150, 0.15); padding-top: 0.5rem;">
+                        ⏱ <strong>Plazo de Respuesta:</strong> Nos comprometemos a responder y gestionar todas las consultas y reportes de accesibilidad en un plazo máximo de <strong>5 días hábiles</strong>.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Institucional UNED / OMiPYME -->
+    <footer class="footer">
+        <div class="footer-logos">
+            <div class="footer-logos-inner">
+                <img src="logos/logo uned blanco .png" alt="UNED - Universidad Estatal a Distancia" class="footer-logo-img">
+                <div class="footer-logo-separator"></div>
+                <img src="logos/logo omipyme blanco.png" alt="OMiPYME - Observatorio MIPYME" class="footer-logo-img">
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UNED</h3>
+                <p>Universidad Estatal a Distancia</p>
+                <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.6); font-size: 0.85rem;">Institución de educación superior pública de Costa Rica</p>
+                <p style="margin-top: 0.5rem;"><a href="https://uned.ac.cr" target="_blank">uned.ac.cr</a></p>
+                <p style="margin-top: 0.25rem;"><a href="https://investiga.uned.ac.cr/" target="_blank">Vicerrectoría de Investigación</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>OMiPYME</h3>
+                <p>Observatorio de Micro, Pequeñas y Medianas Empresas</p>
+                <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.6); font-size: 0.85rem;">Herramientas de IA para el Ecosistema PYME y Gobiernos Locales</p>
+                <p style="margin-top: 0.5rem;"><a href="nosotros.html" style="color: var(--color-uned-gold); text-decoration: none; font-size: 0.85rem; font-weight: 600;">&rarr; Sobre Nosotros y Equipo</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="accesibilidad.html" style="color: var(--color-uned-gold); font-weight: 600;"><span style="margin-right: 3px;">♿</span>Declaración de Accesibilidad</a></li>
+                    <li><a href="https://new.express.adobe.com/webpage/jOEDPKYxrzkdc" target="_blank">Normativa de Uso GPTs</a></li>
+                    <li><a href="https://new.express.adobe.com/webpage/Jq08Z5Mcwba3U" target="_blank">GPTs Especializados</a></li>
+                    <li><a href="index.html#informes">Informes y Publicaciones</a></li>
+                    <li><a href="index.html#reportes-especiales">Reportes Especiales (ICC)</a></li>
+                    <li><a href="https://omipymes.uned.ac.cr/selfiedistrital/" target="_blank">Selfie Distrital</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>omipymes@uned.ac.cr</li>
+                    <li>+506 2527-2000</li>
+                    <li><a href="https://omipyme.uned.ac.cr" target="_blank">omipyme.uned.ac.cr</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Universidad Estatal a Distancia (UNED) - Todos los derechos reservados</p>
+            <div class="footer-license" style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-direction: column; align-items: center; gap: 0.6rem;">
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener" style="display: inline-flex; align-items: center; gap: 0.6rem; color: var(--color-uned-gold); text-decoration: none; font-weight: 600; font-size: 0.85rem; flex-wrap: wrap; justify-content: center;">
+                    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" alt="Licencia Creative Commons BY-NC-SA 4.0" style="height: 31px; width: auto; vertical-align: middle;">
+                    <span>Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</span>
+                </a>
+                <p style="font-size: 0.78rem; color: rgba(255,255,255,0.6); max-width: 680px; margin: 0 auto; text-align: center; line-height: 1.45;">
+                    Esta obra y sus contenidos están bajo una Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional. Permitida su distribución y adaptación sin fines comerciales citando la fuente oficial de la UNED Costa Rica.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante Volver Arriba -->
+    <button class="back-to-top" id="back-to-top" aria-label="Volver arriba" title="Volver al inicio de la página">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+
+    <!-- Región ARIA Live para lectores de pantalla -->
+    <div id="a11y-announcer" class="a11y-sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Guía / Regla de lectura visual -->
+    <div id="a11y-reading-guide" class="a11y-reading-guide" aria-hidden="true"></div>
+
+    <!-- Botón Flotante de Accesibilidad ♿ -->
+    <button type="button" class="a11y-toggle-btn" id="a11y-toggle-btn" aria-label="Abrir panel de herramientas de accesibilidad (Alt + A)" aria-expanded="false" title="Herramientas de Accesibilidad (Alt + A)">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+        </svg>
+    </button>
+
+    <!-- Panel Modal de Herramientas de Accesibilidad -->
+    <aside class="a11y-panel" id="a11y-panel" aria-label="Herramientas de Accesibilidad" role="dialog" aria-modal="false" aria-hidden="true">
+        <div class="a11y-panel-header">
+            <div class="a11y-panel-title">
+                <span>♿</span> Accesibilidad
+            </div>
+            <button type="button" class="a11y-close-btn" id="a11y-close-btn" aria-label="Cerrar panel de accesibilidad (Escape)">
+                &times;
+            </button>
+        </div>
+
+        <div class="a11y-section-title">Tamaño de Texto</div>
+        <div class="a11y-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.25rem;">
+            <button type="button" class="a11y-btn" id="a11y-font-dec" aria-label="Disminuir tamaño de texto">
+                <span class="a11y-btn-icon" style="font-size: 0.95rem;">A-</span>
+                <span>Normal</span>
+            </button>
+            <button type="button" class="a11y-btn" id="a11y-font-inc" aria-label="Aumentar tamaño de texto a 115%">
+                <span class="a11y-btn-icon" style="font-size: 1.15rem;">A+</span>
+                <span>Mediano</span>
+            </button>
+            <button type="button" class="a11y-btn" id="a11y-font-max" aria-label="Aumentar tamaño de texto a 130%">
+                <span class="a11y-btn-icon" style="font-size: 1.35rem;">A++</span>
+                <span>Grande</span>
+            </button>
+        </div>
+
+        <div class="a11y-section-title">Visión y Contraste</div>
+        <div class="a11y-grid">
+            <button type="button" class="a11y-btn" id="a11y-contrast-btn" aria-pressed="false">
+                <span class="a11y-btn-icon">🌓</span>
+                <span>Alto Contraste</span>
+            </button>
+            <button type="button" class="a11y-btn" id="a11y-grayscale-btn" aria-pressed="false">
+                <span class="a11y-btn-icon">🔘</span>
+                <span>Monocromático</span>
+            </button>
+        </div>
+
+        <div class="a11y-section-title">Lectura y Comprensión</div>
+        <div class="a11y-grid">
+            <button type="button" class="a11y-btn" id="a11y-dyslexia-btn" aria-pressed="false">
+                <span class="a11y-btn-icon">📖</span>
+                <span>Fuente Dislexia</span>
+            </button>
+            <button type="button" class="a11y-btn" id="a11y-spacing-btn" aria-pressed="false">
+                <span class="a11y-btn-icon">↔️</span>
+                <span>Mayor Espaciado</span>
+            </button>
+            <button type="button" class="a11y-btn" id="a11y-links-btn" aria-pressed="false">
+                <span class="a11y-btn-icon">🔗</span>
+                <span>Resaltar Enlaces</span>
+            </button>
+            <button type="button" class="a11y-btn" id="a11y-guide-btn" aria-pressed="false">
+                <span class="a11y-btn-icon">📏</span>
+                <span>Regla de Lectura</span>
+            </button>
+        </div>
+
+        <div class="a11y-section-title">Navegación y Movimiento</div>
+        <div class="a11y-grid" style="grid-template-columns: 1fr;">
+            <button type="button" class="a11y-btn" id="a11y-motion-btn" aria-pressed="false" style="flex-direction: row; gap: 0.75rem;">
+                <span class="a11y-btn-icon">🛑</span>
+                <span>Detener / Reducir Animaciones</span>
+            </button>
+        </div>
+
+        <div class="a11y-actions-row">
+            <button type="button" class="a11y-action-btn a11y-reset-btn" id="a11y-reset-btn" aria-label="Restablecer todas las preferencias de accesibilidad">
+                <span>↺</span> Restablecer
+            </button>
+            <button type="button" class="a11y-action-btn a11y-shortcuts-btn" id="a11y-shortcuts-btn" aria-label="Ver atajos de teclado del sitio">
+                <span>⌨️</span> Atajos Teclado
+            </button>
+        </div>
+
+        <a href="accesibilidad.html" class="a11y-footer-link">
+            Declaración de Accesibilidad Web &rarr;
+        </a>
+    </aside>
+
+    <!-- Modal de Atajos de Teclado -->
+    <div class="a11y-modal-backdrop" id="a11y-shortcuts-modal" role="dialog" aria-modal="true" aria-labelledby="a11y-modal-title" aria-hidden="true">
+        <div class="a11y-modal">
+            <div class="a11y-modal-title" id="a11y-modal-title">
+                <span>⌨️</span> Atajos de Teclado del Sitio
+            </div>
+            <p style="font-size: 0.9rem; color: var(--color-gray-600); margin-bottom: 1rem;">
+                Puede utilizar los siguientes comandos de teclado en cualquier momento para navegar con rapidez y autonomía:
+            </p>
+            <table class="a11y-shortcut-table">
+                <thead>
+                    <tr>
+                        <th>Atajo</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">A</span></td>
+                        <td>Abrir / Cerrar menú de accesibilidad</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">S</span></td>
+                        <td>Saltar al contenido principal</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">1</span></td>
+                        <td>Ir al Inicio / Portal principal</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">2</span></td>
+                        <td>Ir a la sección Cinco Pilares</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">3</span></td>
+                        <td>Ir a Asistentes IA y Herramientas</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">4</span></td>
+                        <td>Ir a Biblioteca de Informes PDF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">5</span></td>
+                        <td>Ir a Reportes Especiales ICC</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">6</span></td>
+                        <td>Ir a Sobre Nosotros / Equipo</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Alt</span> + <span class="kbd-key">7</span></td>
+                        <td>Ver Declaración de Accesibilidad</td>
+                    </tr>
+                    <tr>
+                        <td><span class="kbd-key">Esc</span></td>
+                        <td>Cerrar panel o modal abierto</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: right; margin-top: 1.5rem;">
+                <button type="button" class="btn btn-pill-gold" id="a11y-close-shortcuts-btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">
+                    Cerrar (Esc)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const headerNav = document.getElementById('header-nav');
+        if (menuBtn && headerNav) {
+            menuBtn.addEventListener('click', () => {
+                headerNav.classList.toggle('nav-open');
+                const isOpen = headerNav.classList.contains('nav-open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+            });
+
+            headerNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    headerNav.classList.remove('nav-open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Botón Volver Arriba listener
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }, { passive: true });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // =======================================================
+        // MOTOR DE ACCESIBILIDAD UNIVERSAL (OMiPYME / UNED)
+        // Persistencia en localStorage + Anunciador ARIA + Atajos
+        // =======================================================
+        (function() {
+            const STORAGE_KEY = 'omipyme_a11y_prefs';
+            const html = document.documentElement;
+            const announcer = document.getElementById('a11y-announcer');
+
+            function announce(msg) {
+                if (announcer) {
+                    announcer.textContent = '';
+                    setTimeout(() => { announcer.textContent = msg; }, 50);
+                }
+            }
+
+            const state = {
+                fontSize: 'normal',       // 'normal', 'lg', 'xl'
+                highContrast: false,
+                grayscale: false,
+                dyslexia: false,
+                spacing: false,
+                highlightLinks: false,
+                readingGuide: false,
+                reduceMotion: false
+            };
+
+            // Cargar preferencias guardadas
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    Object.assign(state, JSON.parse(saved));
+                }
+            } catch (e) {
+                console.warn('No se pudo acceder a localStorage:', e);
+            }
+
+            // Aplicar estado al DOM
+            function applyState() {
+                // Font size
+                html.classList.remove('a11y-font-lg', 'a11y-font-xl');
+                if (state.fontSize === 'lg') html.classList.add('a11y-font-lg');
+                if (state.fontSize === 'xl') html.classList.add('a11y-font-xl');
+
+                // Toggles
+                html.classList.toggle('a11y-high-contrast', !!state.highContrast);
+                html.classList.toggle('a11y-grayscale', !!state.grayscale);
+                html.classList.toggle('a11y-dyslexia', !!state.dyslexia);
+                html.classList.toggle('a11y-spacing', !!state.spacing);
+                html.classList.toggle('a11y-highlight-links', !!state.highlightLinks);
+                html.classList.toggle('a11y-reduce-motion', !!state.reduceMotion);
+
+                const guide = document.getElementById('a11y-reading-guide');
+                if (guide) {
+                    guide.classList.toggle('active', !!state.readingGuide);
+                }
+
+                // Sincronizar botones UI
+                syncButton('a11y-font-dec', state.fontSize === 'normal');
+                syncButton('a11y-font-inc', state.fontSize === 'lg');
+                syncButton('a11y-font-max', state.fontSize === 'xl');
+
+                syncButton('a11y-contrast-btn', state.highContrast);
+                syncButton('a11y-grayscale-btn', state.grayscale);
+                syncButton('a11y-dyslexia-btn', state.dyslexia);
+                syncButton('a11y-spacing-btn', state.spacing);
+                syncButton('a11y-links-btn', state.highlightLinks);
+                syncButton('a11y-guide-btn', state.readingGuide);
+                syncButton('a11y-motion-btn', state.reduceMotion);
+
+                // Guardar
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+                } catch (e) {}
+            }
+
+            function syncButton(id, isActive) {
+                const btn = document.getElementById(id);
+                if (!btn) return;
+                btn.classList.toggle('active', !!isActive);
+                if (btn.hasAttribute('aria-pressed')) {
+                    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                }
+            }
+
+            // Inicializar UI al cargar
+            document.addEventListener('DOMContentLoaded', () => {
+                applyState();
+
+                // Panel Toggle
+                const toggleBtn = document.getElementById('a11y-toggle-btn');
+                const panel = document.getElementById('a11y-panel');
+                const closeBtn = document.getElementById('a11y-close-btn');
+
+                function openPanel() {
+                    if (!panel) return;
+                    panel.classList.add('open');
+                    panel.setAttribute('aria-hidden', 'false');
+                    toggleBtn?.setAttribute('aria-expanded', 'true');
+                    closeBtn?.focus();
+                    announce('Panel de accesibilidad abierto');
+                }
+
+                function closePanel() {
+                    if (!panel) return;
+                    panel.classList.remove('open');
+                    panel.setAttribute('aria-hidden', 'true');
+                    toggleBtn?.setAttribute('aria-expanded', 'false');
+                    toggleBtn?.focus();
+                    announce('Panel de accesibilidad cerrado');
+                }
+
+                toggleBtn?.addEventListener('click', () => {
+                    if (panel?.classList.contains('open')) closePanel();
+                    else openPanel();
+                });
+
+                closeBtn?.addEventListener('click', closePanel);
+
+                // Eventos de botones
+                document.getElementById('a11y-font-dec')?.addEventListener('click', () => {
+                    state.fontSize = 'normal';
+                    applyState();
+                    announce('Tamaño de texto normal');
+                });
+
+                document.getElementById('a11y-font-inc')?.addEventListener('click', () => {
+                    state.fontSize = 'lg';
+                    applyState();
+                    announce('Tamaño de texto aumentado a 115%');
+                });
+
+                document.getElementById('a11y-font-max')?.addEventListener('click', () => {
+                    state.fontSize = 'xl';
+                    applyState();
+                    announce('Tamaño de texto aumentado a 130%');
+                });
+
+                document.getElementById('a11y-contrast-btn')?.addEventListener('click', () => {
+                    state.highContrast = !state.highContrast;
+                    applyState();
+                    announce(state.highContrast ? 'Alto contraste activado' : 'Alto contraste desactivado');
+                });
+
+                document.getElementById('a11y-grayscale-btn')?.addEventListener('click', () => {
+                    state.grayscale = !state.grayscale;
+                    applyState();
+                    announce(state.grayscale ? 'Modo monocromático activado' : 'Modo monocromático desactivado');
+                });
+
+                document.getElementById('a11y-dyslexia-btn')?.addEventListener('click', () => {
+                    state.dyslexia = !state.dyslexia;
+                    applyState();
+                    announce(state.dyslexia ? 'Fuente para dislexia activada' : 'Fuente predeterminada restaurada');
+                });
+
+                document.getElementById('a11y-spacing-btn')?.addEventListener('click', () => {
+                    state.spacing = !state.spacing;
+                    applyState();
+                    announce(state.spacing ? 'Espaciado aumentado' : 'Espaciado predeterminado restaurado');
+                });
+
+                document.getElementById('a11y-links-btn')?.addEventListener('click', () => {
+                    state.highlightLinks = !state.highlightLinks;
+                    applyState();
+                    announce(state.highlightLinks ? 'Enlaces resaltados' : 'Resaltado de enlaces desactivado');
+                });
+
+                document.getElementById('a11y-guide-btn')?.addEventListener('click', () => {
+                    state.readingGuide = !state.readingGuide;
+                    applyState();
+                    announce(state.readingGuide ? 'Regla de lectura activada' : 'Regla de lectura desactivada');
+                });
+
+                document.getElementById('a11y-motion-btn')?.addEventListener('click', () => {
+                    state.reduceMotion = !state.reduceMotion;
+                    applyState();
+                    announce(state.reduceMotion ? 'Animaciones desactivadas' : 'Animaciones habilitadas');
+                });
+
+                document.getElementById('a11y-reset-btn')?.addEventListener('click', () => {
+                    state.fontSize = 'normal';
+                    state.highContrast = false;
+                    state.grayscale = false;
+                    state.dyslexia = false;
+                    state.spacing = false;
+                    state.highlightLinks = false;
+                    state.readingGuide = false;
+                    state.reduceMotion = false;
+                    applyState();
+                    announce('Todas las preferencias de accesibilidad han sido restablecidas');
+                });
+
+                // Regla de lectura mousemove
+                const guideEl = document.getElementById('a11y-reading-guide');
+                window.addEventListener('mousemove', (e) => {
+                    if (state.readingGuide && guideEl) {
+                        guideEl.style.top = (e.clientY - 19) + 'px';
+                    }
+                }, { passive: true });
+
+                // Modal Atajos
+                const shortcutsModal = document.getElementById('a11y-shortcuts-modal');
+                const openShortcutsBtn = document.getElementById('a11y-shortcuts-btn');
+                const closeShortcutsBtn = document.getElementById('a11y-close-shortcuts-btn');
+
+                function openShortcuts() {
+                    if (shortcutsModal) {
+                        shortcutsModal.classList.add('open');
+                        shortcutsModal.setAttribute('aria-hidden', 'false');
+                        closeShortcutsBtn?.focus();
+                        announce('Diálogo de atajos de teclado abierto');
+                    }
+                }
+
+                function closeShortcuts() {
+                    if (shortcutsModal) {
+                        shortcutsModal.classList.remove('open');
+                        shortcutsModal.setAttribute('aria-hidden', 'true');
+                        openShortcutsBtn?.focus();
+                        announce('Diálogo de atajos de teclado cerrado');
+                    }
+                }
+
+                openShortcutsBtn?.addEventListener('click', openShortcuts);
+                closeShortcutsBtn?.addEventListener('click', closeShortcuts);
+                shortcutsModal?.addEventListener('click', (e) => {
+                    if (e.target === shortcutsModal) closeShortcuts();
+                });
+
+                // Atajos de Teclado Globales (Alt + tecla)
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        if (shortcutsModal?.classList.contains('open')) closeShortcuts();
+                        else if (panel?.classList.contains('open')) closePanel();
+                        return;
+                    }
+
+                    if (e.altKey) {
+                        switch (e.key.toLowerCase()) {
+                            case 'a':
+                                e.preventDefault();
+                                if (panel?.classList.contains('open')) closePanel();
+                                else openPanel();
+                                break;
+                            case 's':
+                                e.preventDefault();
+                                document.querySelector('.skip-link')?.focus();
+                                break;
+                            case '1':
+                                e.preventDefault();
+                                window.location.href = 'index.html';
+                                break;
+                            case '2':
+                                e.preventDefault();
+                                document.getElementById('pilares')?.scrollIntoView({ behavior: 'smooth' });
+                                break;
+                            case '3':
+                                e.preventDefault();
+                                document.getElementById('asistentes')?.scrollIntoView({ behavior: 'smooth' });
+                                break;
+                            case '4':
+                                e.preventDefault();
+                                document.getElementById('informes')?.scrollIntoView({ behavior: 'smooth' });
+                                break;
+                            case '5':
+                                e.preventDefault();
+                                document.getElementById('reportes-especiales')?.scrollIntoView({ behavior: 'smooth' });
+                                break;
+                            case '6':
+                                e.preventDefault();
+                                window.location.href = 'nosotros.html';
+                                break;
+                            case '7':
+                                e.preventDefault();
+                                window.location.href = 'accesibilidad.html';
+                                break;
+                        }
+                    }
+                });
+            });
+        })();
+    
+    </script>
+</body>
+</html>
