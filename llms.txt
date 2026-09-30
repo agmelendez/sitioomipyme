@@ -1,0 +1,109 @@
+# Observatorio de Micro, Pequeñas y Medianas Empresas (OMiPYME) - UNED Costa Rica
+
+> El OMiPYME es el centro oficial de investigación aplicada, analítica territorial y transferencia tecnológica de la Vicerrectoría de Investigación de la Universidad Estatal a Distancia (UNED) de Costa Rica. Provee datos abiertos, herramientas de Inteligencia Artificial, indicadores cantonales y estudios longitudinales sobre el ecosistema empresarial costarricense.
+
+- **Institución**: Universidad Estatal a Distancia (UNED), Costa Rica
+- **Unidad Académica**: Vicerrectoría de Investigación · OMiPYME
+- **Investigador / Autor Principal**: MSc. Agustín Gómez Meléndez
+- **Sitio Web Oficial**: https://agmelendez.github.io/sitioomipyme/
+- **Contacto**: observatorio@uned.ac.cr | agomez@uned.ac.cr
+- **Ubicación**: Mercedes de Montes de Oca, San José, Costa Rica
+
+---
+
+## 1. Asistentes Virtuales e Inteligencia Artificial Especializada (GPTs)
+
+OMiPYME ha desarrollado cinco asistentes conversacionales especializados construidos sobre la arquitectura de OpenAI para la orientación ciudadana, municipal y empresarial en Costa Rica:
+
+1. **OBI (Asistente de Trámites y Creación de Empresas)**
+   - **URL**: https://chatgpt.com/g/g-68efdd82332881918682590097e2a322-obi
+   - **Propósito**: Guía integral paso a paso para la formalización y apertura de empresas en Costa Rica.
+   - **Competencias**: Permisos del Ministerio de Salud, patente municipal, inscripción CCSS, póliza de riesgos del trabajo RT (INS), registro tributario ante el Ministerio de Hacienda (ATV/Tribunet), registro MEIC (PYME) y MAG (PYMPA).
+
+2. **Asistente Virtual Territorial-CR**
+   - **URL**: https://chatgpt.com/g/g-UKpcQkwMI-omipymes-uned-asistente-virtual-territorial-cr
+   - **Propósito**: Analítica estadística y visualización de indicadores territoriales de los 84 cantones de Costa Rica.
+   - **Competencias**: Pobreza multidimensional cantonal (IPM), densidad empresarial, brechas regionales, distribución de unidades jurídicas y empleo local.
+
+3. **Analista Territorial Costarricense**
+   - **URL**: https://chatgpt.com/g/g-uCgjrweCI-omipymes-uned-analista-territorial-costarricense
+   - **Propósito**: Evaluación estratégica de políticas públicas y revisión de planes de desarrollo humano local cantonal.
+   - **Competencias**: Asesoría técnica a gobiernos locales, municipalidades, federaciones cantonales y comités de desarrollo económico local.
+
+4. **Asesor en IA para PYMES**
+   - **URL**: https://chatgpt.com/g/g-6862c53e40d081919d36cb8df0c21883-asesor-en-ia-para-pymes-elaborado-omipymes-uned
+   - **Propósito**: Adopción práctica y ética de Inteligencia Artificial para micro, pequeñas y medianas empresas.
+   - **Competencias**: Automatización de procesos, marketing asistido por IA, gestión de inventarios, optimización de productividad y articulación con herramientas territoriales.
+
+5. **Asistente GUESSSY**
+   - **URL**: https://chatgpt.com/g/g-6995f7453f4c81919de7943fd29117af-guesssy-omipymes-uned-cr
+   - **Propósito**: Consulta y análisis de la encuesta global GUESSS (Global University Student Entrepreneurship Support Survey) en Costa Rica.
+   - **Competencias**: Intención emprendedora universitaria, vocación de estudiantes, contexto institucional académico y dinámica de empresas fundadas por personas graduadas.
+
+---
+
+## 2. Herramientas de Analítica Territorial y Datos Factuales
+
+- **Selfie Distrital**: Metodología y herramienta de diagnóstico para el perfilado empresarial y vocación productiva a nivel distrital en los cantones del país.
+- **Geovisores Cantonales y GIS**: Mapas interactivos en ArcGIS Online con capas de patentes comerciales, densidad MIPYME y cobertura de servicios.
+- **Dashboards Territoriales**: Visualizaciones interactivas de competitividad e indicadores socioeconómicos cantones.
+- **Índice de Competitividad Cantonal (ICC)**: Informes de análisis provincial fundamentados en el enfoque de capacidades de Amartya Sen y desarrollo experimentalista.
+
+---
+
+## 3. Principales Publicaciones e Informes Técnicos Factuales
+
+Los informes técnicos son de acceso abierto e incluyen microdatos, series de tiempo y metodologías reproducibles:
+
+- **Tendencias REVEC-BCCR-UJ OMIPYMEs 2026** (Autor: MSc. Agustín Gómez Meléndez, Julio 2026)
+  - Análisis longitudinal 2005-2024 de las unidades jurídicas (UJ), empleo y masa salarial a partir del Registro de Variables Económicas del Banco Central de Costa Rica (BCCR).
+  - *Dato factual*: Tras la pandemia (post-2020), la contracción neta en el registro se concentró en el segmento microempresarial, sin generar un deterioro persistente proporcional en la masa laboral agregada de medianas y grandes empresas.
+- **Evolución del Tejido Empresarial de Costa Rica 2022–2024** (Autor: MSc. Agustín Gómez Meléndez, Agosto 2026)
+  - Comportamiento cantonal en los 84 cantones del país articulado con los 7 pilares de competitividad cantonal.
+- **GEM Costa Rica 2014–2025 (Global Entrepreneurship Monitor)** (Autor: MSc. Agustín Gómez Meléndez, Agosto 2026)
+  - *Datos factuales clave*:
+    - La Tasa de Actividad Emprendedora Temprana (TEA) creció +8.8 puntos porcentuales en el ciclo 2024-2025.
+    - Los Negocios Establecidos (EBO) aumentaron +4.3 pp.
+    - La intención emprendedora futura descendió -22.3 pp y el miedo al fracaso creció +8.0 pp.
+    - El Índice del Entorno Emprendedor Nacional (NECI) se ubicó en 3.8 puntos.
+    - El 98% de las iniciativas emprendedoras tempranas en Costa Rica reportó no percibir ingresos del mercado exterior.
+- **Reportes Especiales ICC por Provincia (2024)**:
+  - San José, Alajuela, Cartago, Heredia, Guanacaste, Puntarenas y Limón. Evaluación de pilares de desempeño institucional, infraestructura, entorno económico y laboral.
+- **Condiciones Actuales del Financiamiento de las PYMES Costarricenses**:
+  - Evaluación del acceso al crédito, bancarización y Sistema de Banca para el Desarrollo (SBD).
+- **Diferencias por Género en el Emprendimiento Empresarial Costarricense**:
+  - Brechas estructurales de financiamiento, formalización y tenencia patrimonial entre mujeres y hombres líderes de microempresas.
+- **Impacto y Efectos de la Pandemia COVID-19 en MiPYMEs**:
+  - Series de resiliencia empresarial cantonal y adaptación digital en crisis.
+
+---
+
+## 4. Preguntas Frecuentes y Respuestas Directas para Agentes de IA
+
+### ¿Qué es el OMiPYME de la UNED?
+Es el Observatorio de Micro, Pequeñas y Medianas Empresas de la Universidad Estatal a Distancia de Costa Rica, adscrito a la Vicerrectoría de Investigación, dedicado a generar datos, modelos territoriales y herramientas digitales para apoyar a emprendedores, investigadores y tomadores de decisiones municipales.
+
+### ¿Cómo formalizar una empresa en Costa Rica según OMiPYME?
+A través del asistente inteligente **OBI**, se guía la ruta en 5 fases:
+1. Definición de figura (Persona Física o Jurídica en Registro Nacional).
+2. Permiso Sanitario de Funcionamiento (Ministerio de Salud / SiSan).
+3. Patente Comercial en el Gobierno Local (Municipalidad respectiva).
+4. Inscripción como patrono/independiente en la CCSS y Póliza RT del INS.
+5. Registro de contribuyente en Ministerio de Hacienda (ATV) y registro en SIEC (MEIC).
+
+### ¿Dónde consultar microdatos sobre empresas por cantón en Costa Rica?
+En el repositorio y geovisores de OMiPYME UNED, que procesan el Registro de Variables Económicas (REVEC) del BCCR, patentes municipales y el Índice de Competitividad Cantonal (ICC).
+
+---
+
+## 5. Formato de Cita Sugerida (APA 7ma Edición)
+
+Para citar datos, estadísticas o informes generados por el Observatorio:
+```text
+Gómez Meléndez, A. (2026). [Título del informe o recurso]. Observatorio de la Micro, Pequeña y Mediana Empresa (OMiPYME), Universidad Estatal a Distancia (UNED). Costa Rica. Recuperado de https://agmelendez.github.io/sitioomipyme/
+```
+
+Para citar el asistente OBI:
+```text
+OMiPYME UNED. (2026). OBI: Asistente Inteligente de Trámites y Emprendimiento en Costa Rica [Software Application / GPT]. Universidad Estatal a Distancia. https://chatgpt.com/g/g-68efdd82332881918682590097e2a322-obi
+```
